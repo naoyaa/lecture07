@@ -6,7 +6,10 @@ var photoList = [
 	  {src: "img/200902.png", title: "9月"},
 	  {src: "img/201008.png", title: "もう1回8月"},
     {src: "img/front.png", title: "前"},
-    {src:	"img/side.png", title: "横"}
+    {src:	"img/side.png", title: "横"},
+    {src: "img/index.jpg", title: "ひまわり"}
+    //showphotでindexの値がphotlistの数を上回るまで画像の表示を繰り返すと定義されており、
+    //photoListに画像ファイルを一つ追加し、表示する画像を一つ増やした。
 ];
 
 var isReady = function(){
