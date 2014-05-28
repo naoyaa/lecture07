@@ -1,4 +1,4 @@
-var DATA_SIZE = 5;
+var DATA_SIZE = 8;
 
 var inputElements = [];
 var outputMean = null;
@@ -26,29 +26,50 @@ var calcMean = function(){
     var sum = 0;
     var n = 0;
 
+
     while(index < inputElements.length){
         var input = inputElements[index];
         var number = Number(input.value);
-        if(!Number.isNaN(number)){
+        if(input.value.length > 0 && !Number.isNaN(number)){
             sum = sum + number;
             n = n + 1;
         }
         index = index + 1;
     }
-
+       console.log(n);
     if(n > 0){
         outputMean.textContent = sum / n;
     }
+    else{
+        alert("０以上の数字を入力してくください");
+}
 };
+
+
+var calcMax = function CalcMax(a,b,c){
+  var max_row = new Array(a,b,c); 
+  var max_num = max_row[0];
+  for(var i=1; i<max_row.length; i++)
+    if(max_row[i]>max_num) max_num = max_row[i];
+  return max_num;
+    //if(n > 0){
+        //outputMeans.textContent = max / n;
+
+}
+
+
 
 var calcStats = function(){
     calcMean();
+    calcMax();
 };
+
 
 var initApp = function(){
     initInputElements();
 
     outputMean = document.querySelector("#mean");
+    outputMeans = document.querySelector("#max");
 
     var calcMeanButton = document.querySelector("#start");
     calcMeanButton.addEventListener("click", calcStats);
